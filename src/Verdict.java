@@ -15,7 +15,9 @@ public class Verdict {
     
     // Constructor
     public Verdict(){
-        
+        caseTitle = "";
+        studentVerdict = "";
+        reason = "";
     }
     
     // Filled constructor
