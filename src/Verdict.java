@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -20,7 +20,12 @@ public class Verdict {
         reason = "";
     }
     
-    // Filled constructor
+    /**
+     * Verdict object is created using user values
+     * @param caseTitle TItle for the case
+     * @param verdict User's opinion on the case
+     * @param reason User's reasoning for the case
+     */
     public Verdict (String caseTitle, String verdict, String reason) {
         this.caseTitle = caseTitle;
         this.studentVerdict = verdict;
