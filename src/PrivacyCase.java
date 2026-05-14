@@ -14,10 +14,10 @@ public class PrivacyCase extends EthicsCase{
         this.dataType = dataType;
     }
     public String getDataType(){
-        return dateType;
+        return dataType;
     }
     public String toString(){
-        return super.getTitle();
+        return super.getCaseTitle();
     }
 }
 

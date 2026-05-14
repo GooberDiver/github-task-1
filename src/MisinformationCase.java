@@ -17,6 +17,6 @@ public class MisinformationCase extends EthicsCase{
     return mediaType;
 }
     public String toString(){
-    return super.getTitle();
+    return super.getCaseTitle();
 }
 }
