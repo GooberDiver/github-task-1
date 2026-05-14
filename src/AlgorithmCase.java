@@ -8,5 +8,15 @@
  * @author 343084331
  */
 public class AlgorithmCase {
-    
+    private String biasType;
+    public AlgorithmCase(String caseTitle, String description, String biasType){
+        super(caseTitle, description, "bias");
+        this.biasType = biasType;
+    }
+    public String getBiasType(){
+       return biasType; 
+    }
+    public String toString(){
+        return super.getTitle();
+    }
 }

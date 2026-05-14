@@ -8,5 +8,16 @@
  * @author 343084331
  */
 public class PrivacyCase {
-    
+    private String dataType;
+    public PrivacyCase(String caseTitle, String description, String dataType){
+        super(caseTitle, description, "Privacy");
+        this.dataType = dataType;
+    }
+    public String getDataType(){
+    return dateType;
 }
+    public String toString(){
+        return super.getTitle();
+    }
+}
+
