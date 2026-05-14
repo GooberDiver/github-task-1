@@ -7,7 +7,7 @@
  *
  * @author 343084331
  */
-public class AlgorithmCase {
+public class AlgorithmCase  extends EthicsCase{
     private String biasType;
     public AlgorithmCase(String caseTitle, String description, String biasType){
         super(caseTitle, description, "bias");
