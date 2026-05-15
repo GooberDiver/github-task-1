@@ -14,6 +14,30 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
+        
+        // Array creation
+        EthicsCase [] cases = new EthicsCase[8];
+        
+        // Instantiating cases
+        
+        // Premade cases
+        cases[0] = new PrivacyCase ("The always-on microphone", 
+                "A smartphone company recorded household conversation even when the device " +
+                "was not activated. Employees reviewed the recording", "audio recordings");
+                
+        cases[1] = new AlgorithmCase ("The biased hiring bot", "A tech company's AI screening " +
+                "tool ranked male applicants higher than equally qualfiied female applicants.", "gender bias");
+        
+        cases[2] = new MisinformationCase ("The deepfake politication", "A deepfake video of a candidate " +
+                "saying things they never said spread widely online during an election before being identified as fake.",
+                "deepfake video");
+        
+        cases[3] = new IntellectualPropertyCase ("AI trained on artist work", "An AI image generator was trained on millions " +
+                "of artworks scraped without permission. Artists receive no credit or payment.", "AI-generated art");
+        
+        // new cases
+       
+                
     }
 
     /**
