@@ -36,8 +36,20 @@ public class MainMenu extends javax.swing.JFrame {
                 "of artworks scraped without permission. Artists receive no credit or payment.", "AI-generated art");
         
         // new cases
-       
-                
+        cases[4] = new PrivacyCase ("The data breech", "A company collected data on users to get feedback for their product. " +
+                "A hack found a security flaw and uncovered the data. The hacker gave suggestion on how to improve the data security.",
+                "data breech");
+        
+        cases[5] = new AlgorithmCase ("The healthcare diagonsis", "A hospital used Ai to speed up their diagonsis of patients " +
+                "which let them deal with more people. Minorities were more likely to be misdiagnosed due to lack of representation in the algorithm.",
+                "Healthcase diagnosis");
+        
+        cases[6] = new MisinformationCase ("The health posts", "An influencer creates a post about a disease outbreak without research " + 
+                "and ends up posting incorrect info. Their followers trust them and repost the content leading to misinformation spreading.",
+                "social media post");
+        
+        cases[7] = new IntellectualPropertyCase ("The missing show", "A streaming platform removes a show after underperforming in profits, " +
+                "users pirate the show after removal in order to watch the show.", "digital piracy");
     }
 
     /**
