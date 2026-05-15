@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+// Importing
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
+
 /**
  *
  * @author 343084331
@@ -14,6 +18,17 @@ public class Scenario5 extends javax.swing.JFrame {
      */
     public Scenario5() {
         initComponents();
+        
+        // Code that runs as soon as window opens
+         addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowActivated(WindowEvent e) {
+                jLabel2.setText(cases[4].getCaseTitle());
+                //add code here
+                
+            }
+        });
+
     }
 
     /**
