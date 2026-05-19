@@ -15,8 +15,6 @@ public class MainMenu extends javax.swing.JFrame {
     // Array creation
     static EthicsCase [] cases = new EthicsCase[8];
         
-        // Instantiating cases
-        
         
     /**
      * Creates new form MainMenu
