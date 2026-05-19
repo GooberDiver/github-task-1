@@ -44,7 +44,7 @@ public class MainMenu extends javax.swing.JFrame {
                 "A hack found a security flaw and uncovered the data. The hacker gave suggestion on how to improve the data security.",
                 "data breech");
         
-        cases[5] = new AlgorithmCase ("The healthcare diagonsis", "A hospital used Ai to speed up their diagonsis of patients " +
+        cases[5] = new AlgorithmCase ("The healthcare diagonsis", "A hospital used AI to speed up their diagonsis of patients " +
                 "which let them deal with more people. Minorities were more likely to be misdiagnosed due to lack of representation in the algorithm.",
                 "Healthcase diagnosis");
         

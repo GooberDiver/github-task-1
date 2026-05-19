@@ -10,7 +10,7 @@
 public class PrivacyCase extends EthicsCase{
     private String dataType;
     public PrivacyCase(String caseTitle, String description, String dataType){
-        super(caseTitle, description, "Privacy");
+        super(caseTitle, description, "Privacy and data protection");
         this.dataType = dataType;
     }
     public String getDataType(){
