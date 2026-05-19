@@ -11,17 +11,18 @@
  * @author 343084331
  */
 public class MainMenu extends javax.swing.JFrame {
-
+    
+    // Array creation
+    static EthicsCase [] cases = new EthicsCase[8];
+        
+        // Instantiating cases
+        
+        
     /**
      * Creates new form MainMenu
      */
     public MainMenu() {
         initComponents();
-        
-        // Array creation
-        EthicsCase [] cases = new EthicsCase[8];
-        
-        // Instantiating cases
         
         // Premade cases
         cases[0] = new PrivacyCase ("The always-on microphone", 

@@ -23,7 +23,7 @@ public class Scenario5 extends javax.swing.JFrame {
          addWindowListener(new WindowAdapter() {
             @Override
             public void windowActivated(WindowEvent e) {
-                jLabel2.setText(cases[4].getCaseTitle());
+                jLabel2.setText(MainMenu.cases[4].getCaseTitle());
                 //add code here
                 
             }
