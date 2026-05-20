@@ -3,17 +3,63 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+// Importing
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
+
 /**
  *
  * @author 343084331
  */
 public class Result extends javax.swing.JFrame {
-
+    
+    public int ethical = 0;
+    public int unethical = 0;
     /**
      * Creates new form Result
      */
     public Result() {
         initComponents();
+        
+        // Code that runs as soon as window opens
+         addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowActivated(WindowEvent e) {
+                // Check for ethical or unethical
+                for (int i = 0 ; i < MainMenu.cases.length ; i++) {
+                    if (MainMenu.cases[i].verdict.getStudentVerdict().equals("Ethical") ) { 
+                        // Increasing ethical choice amount
+                        ethical += 1;
+                    }
+                    if (MainMenu.cases[i].verdict.getStudentVerdict().equals("Unethical") ) {
+                        // Increasing unethical choice amount
+                        unethical += 1;
+                    }
+                }
+                // Showing number of times ethical was picked
+                jLabel4.setText("" + ethical);
+                // Showing number of times unethical was picked
+                jLabel5.setText("" + unethical);
+                
+                // Result profile based on number of times unethical was picked
+                if (unethical <= 2) { // Tech optimist
+                    jTextPane1.setText("Your profile: The Tech Optimist" + "\n\nYou see technology " +
+                            "as largely a force for good. You tend to trust that companies and developers have good intentions");
+                }
+                if (unethical == 3 || unethical == 4) { // Cautious realist
+                    jTextPane1.setText("Your profile: The Cautious Realist" + "\n\n You see both the benefits " +
+                        "and dangers of technology. You believe progress is good, but needs rules and accountability.");
+                }
+                if (unethical == 5 || unethical == 6) { // Critical thinker
+                    jTextPane1.setText("Your profile: The Critical Thinker" + "\n\n You are skeptical of how technology " +
+                            "is being used. You believe the tech industry needs serious reform to protect people.");
+                }
+                if (unethical >= 7) { // Ethics watchdog
+                    jTextPane1.setText("Your profile: The Ethics Watchdog" + "\n\n You believe technology is causing more " +
+                            "harm than good right now. You think strong laws and ethical standards are urgently needed.");
+                }
+            }
+        });
     }
 
     /**
@@ -30,9 +76,9 @@ public class Result extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,10 +92,6 @@ public class Result extends javax.swing.JFrame {
 
         jLabel5.setText("jLabel5");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
         jButton1.setText("Return to main menu");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,29 +99,34 @@ public class Result extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane2.setViewportView(jTextPane1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(175, 175, 175)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(25, 25, 25)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton1)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jLabel5))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(38, 38, 38)
-                                    .addComponent(jLabel4))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel5))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addGap(38, 38, 38)
+                                            .addComponent(jLabel4)))
+                                    .addGap(237, 237, 237))))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,9 +142,9 @@ public class Result extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -155,7 +202,7 @@ public class Result extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -142,7 +142,7 @@ public class Scenario8 extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         // Changing jFrame
-        new MainMenu().setVisible(true);
+        new Result().setVisible(true);
         this.setVisible(false);
         
         // Setting case title
