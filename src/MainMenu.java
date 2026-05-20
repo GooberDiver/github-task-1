@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-
+// Importing file input code
+import java.io.IOException;
+import java.io.File;
+import java.util.Scanner;
 
 
 /**
@@ -22,6 +25,8 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
         
+        
+        /**
         // Premade cases
         cases[0] = new PrivacyCase ("The always-on microphone", 
                 "A smartphone company recorded household conversation even when the device " +
@@ -52,6 +57,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         cases[7] = new IntellectualPropertyCase ("The missing show", "A streaming platform removes a show after underperforming in profits, " +
                 "users pirate the show after removal in order to watch the show.", "digital piracy");
+        */
         
     }
 
@@ -107,6 +113,31 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        // Making cases from the file 
+        try {
+            // Making scanner
+            Scanner input = new Scanner(new File("Scenarios.txt"));
+            
+            // Loop to go through file
+            while (input.hasNextLine() ) {
+                // Splitting the file text
+                String text = input.nextLine();
+                String [] info = text.split(",");
+                // Loop to go through fill in each case in cases array
+                for (int i = 0 ; i < cases.length ; i++ ) {
+                    // Check for array position when scenario is a privacy case
+                    if (i == 0 || i == 4) {
+                        // Making the case object
+                        cases[i] = new PrivacyCase (info[i].trim(), info[i+1].trim(), info[i+2].trim() );
+                    }
+                }
+            input.close();  //Closing scanner  
+            }
+        }
+        catch ( IOException e) {
+            System.out.print("Error with reading from file");
+        }
         
         new Scenario1().setVisible(true);
         this.setVisible(false);

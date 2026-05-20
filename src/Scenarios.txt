@@ -1,1 +1,3 @@
-
+The always-on microphone,A smartphone company recorded household conversation even when the device was not activated. Employees reviewed the recording,audio recordings
+The biased hiring bot,A tech company's AI screening tool ranked male applicants higher than equally qualified female applicants, gender bias
+The Deepfake Politician,A deepfake video of a candidate saying things they never said spread widely online during an election before being identified as fake.,deepfake video
