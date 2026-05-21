@@ -25,7 +25,47 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
         
-        
+        // Counter variable to change array positon
+        int counter = 0;
+        // Making cases from the file 
+        try {
+            // Making scanner
+            Scanner input = new Scanner(new File("Scenarios.txt"));
+            
+            // Loop to go through file
+            while (input.hasNextLine() ) {
+                // Splitting the file text
+                String text = input.nextLine();
+                String [] info = text.split(",");
+
+                // Check for array position when scenario is a privacy case
+                if (counter == 0 || counter == 4) {
+                        // Making the case object
+                    cases[counter] = new PrivacyCase (info[0].trim(), info[1].trim(), info[2].trim() );
+                }
+                // Check for array position when scenario is an algorithm case
+                if (counter == 1 || counter == 5) {
+                        // Making the case object
+                    cases[counter] = new AlgorithmCase (info[0].trim(), info[1].trim(), info[2].trim() );
+                }
+                // Check for array position when scenario is a misinformation case
+                if (counter == 2 || counter == 6) {
+                        // Making the case object
+                    cases[counter] = new MisinformationCase (info[0].trim(), info[1].trim(), info[2].trim() );
+                }
+                // Check for array position when scenario is an intellectual property case
+                if (counter == 3 || counter == 7) {
+                        // Making the case object
+                    cases[counter] = new IntellectualPropertyCase (info[0].trim(), info[1].trim(), info[2].trim() );
+                }
+                
+            counter += 1; //Increasing counter to move array position
+            }
+            input.close();  //Closing scanner  
+        }
+        catch ( IOException e) {
+            System.out.print("Error with reading from file");
+        }
         /**
         // Premade cases
         cases[0] = new PrivacyCase ("The always-on microphone", 
@@ -114,30 +154,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        // Making cases from the file 
-        try {
-            // Making scanner
-            Scanner input = new Scanner(new File("Scenarios.txt"));
-            
-            // Loop to go through file
-            while (input.hasNextLine() ) {
-                // Splitting the file text
-                String text = input.nextLine();
-                String [] info = text.split(",");
-                // Loop to go through fill in each case in cases array
-                for (int i = 0 ; i < cases.length ; i++ ) {
-                    // Check for array position when scenario is a privacy case
-                    if (i == 0 || i == 4) {
-                        // Making the case object
-                        cases[i] = new PrivacyCase (info[i].trim(), info[i+1].trim(), info[i+2].trim() );
-                    }
-                }
-            input.close();  //Closing scanner  
-            }
-        }
-        catch ( IOException e) {
-            System.out.print("Error with reading from file");
-        }
+        
         
         new Scenario1().setVisible(true);
         this.setVisible(false);
