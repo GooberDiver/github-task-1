@@ -33,7 +33,7 @@ public class MainMenu extends javax.swing.JFrame {
             Scanner input = new Scanner(new File("Scenarios.txt"));
             
             // Loop to go through file
-            while (input.hasNext() ) {
+            while (input.hasNextLine() ) {
                 // Splitting the file text
                 String text = input.nextLine();
                 //String [] info = text.split(",");
@@ -59,7 +59,7 @@ public class MainMenu extends javax.swing.JFrame {
                         // Making the case object
                     cases[counter] = new IntellectualPropertyCase (info[0].trim(), info[1].trim(), info[2].trim() );
                 }
-                * */
+                */
                 
             counter += 1; //Increasing counter to move array position
             }
