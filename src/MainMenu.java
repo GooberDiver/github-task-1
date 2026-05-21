@@ -33,11 +33,12 @@ public class MainMenu extends javax.swing.JFrame {
             Scanner input = new Scanner(new File("Scenarios.txt"));
             
             // Loop to go through file
-            while (input.hasNextLine() ) {
+            while (input.hasNext() ) {
                 // Splitting the file text
                 String text = input.nextLine();
-                String [] info = text.split(",");
-
+                //String [] info = text.split(",");
+                System.out.print(text);
+                /**
                 // Check for array position when scenario is a privacy case
                 if (counter == 0 || counter == 4) {
                         // Making the case object
@@ -58,6 +59,7 @@ public class MainMenu extends javax.swing.JFrame {
                         // Making the case object
                     cases[counter] = new IntellectualPropertyCase (info[0].trim(), info[1].trim(), info[2].trim() );
                 }
+                * */
                 
             counter += 1; //Increasing counter to move array position
             }
@@ -65,6 +67,10 @@ public class MainMenu extends javax.swing.JFrame {
         }
         catch ( IOException e) {
             System.out.print("Error with reading from file");
+        }
+        catch (ArrayIndexOutOfBoundsException f) {
+            System.out.println("meatball");
+           
         }
         /**
         // Premade cases
