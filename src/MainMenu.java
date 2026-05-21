@@ -72,7 +72,7 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("meatball");
            
         }
-        /**
+        
         // Premade cases
         cases[0] = new PrivacyCase ("The always-on microphone", 
                 "A smartphone company recorded household conversation even when the device " +
@@ -103,7 +103,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         cases[7] = new IntellectualPropertyCase ("The missing show", "A streaming platform removes a show after underperforming in profits, " +
                 "users pirate the show after removal in order to watch the show.", "digital piracy");
-        */
+        System.out.println(cases[7]);
         
     }
 
