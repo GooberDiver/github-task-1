@@ -77,14 +77,14 @@ public class Scenario3 extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setText("Ethica");
+        jRadioButton1.setText("Ethical");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("UnEthica");
+        jRadioButton2.setText("Unethical");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -121,7 +121,7 @@ public class Scenario3 extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addComponent(jScrollPane1)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

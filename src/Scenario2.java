@@ -82,14 +82,14 @@ public class Scenario2 extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jRadioButton1.setText("Ethica");
+        jRadioButton1.setText("Ethical");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("UnEthica");
+        jRadioButton2.setText("Unethical");
 
         jLabel5.setText("Reason:");
 

@@ -85,7 +85,7 @@ public class Scenario1 extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton2.setText("UnEthical");
+        jRadioButton2.setText("Unethical");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
