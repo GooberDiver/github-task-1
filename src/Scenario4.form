@@ -126,12 +126,12 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ethica"/>
+        <Property name="text" type="java.lang.String" value="Ethical"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="UnEthica"/>
+        <Property name="text" type="java.lang.String" value="Unethical"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">

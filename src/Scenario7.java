@@ -167,16 +167,18 @@ public class Scenario7 extends javax.swing.JFrame {
             if (jRadioButton2.isSelected() ) {
                 MainMenu.cases[6].verdict.setStudentVerdict("Unethical");  
             }
+            // Getting student reason
+            MainMenu.cases[6].verdict.setReason(jTextArea1.getText());
+        
             // Writing to the file
-            output.println(MainMenu.cases[6].verdict.getStudentVerdict());
+            output.println(MainMenu.cases[6].verdict);
             // Closing the printwriter to save to file
             output.close(); 
             // Error check
         } catch(IOException e){
             System.out.println("Error with writing answer to file");
         }
-        // Getting student reason
-        MainMenu.cases[6].verdict.setReason(jTextArea1.getText());
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

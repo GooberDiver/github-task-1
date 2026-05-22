@@ -77,9 +77,9 @@ public class Scenario4 extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setText("Ethica");
+        jRadioButton1.setText("Ethical");
 
-        jRadioButton2.setText("UnEthica");
+        jRadioButton2.setText("Unethical");
 
         jLabel5.setText("Reason:");
 
@@ -150,7 +150,7 @@ public class Scenario4 extends javax.swing.JFrame {
         this.setVisible(false);
         
         // Setting case title
-        MainMenu.cases[3].verdict.setCaseTitle("forged evidence");
+        MainMenu.cases[3].verdict.setCaseTitle("AI artwork");
         
         // Writing the verdict to file
         try {
@@ -166,16 +166,18 @@ public class Scenario4 extends javax.swing.JFrame {
                 MainMenu.cases[3].verdict.setStudentVerdict("Unethical");
                 
             }
+            // Getting student reason
+            MainMenu.cases[3].verdict.setReason(jTextArea1.getText());
+        
             // Writing to the file
-            output.println(MainMenu.cases[3].verdict.getStudentVerdict());
+            output.println(MainMenu.cases[3].verdict);
             // Closing the printwriter to save to file
             output.close(); 
             // Error check
         } catch(IOException e){
             System.out.println("Error with writing answer to file");
         }
-        // Getting student reason
-        MainMenu.cases[3].verdict.setReason(jTextArea1.getText());
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -160,7 +160,7 @@ public class Scenario3 extends javax.swing.JFrame {
         this.setVisible(false);
         
         // Setting case title
-        MainMenu.cases[2].verdict.setCaseTitle("forged evidence");
+        MainMenu.cases[2].verdict.setCaseTitle("Deepfake political footage");
         
         // Writing the verdict to file
         try {
@@ -174,18 +174,18 @@ public class Scenario3 extends javax.swing.JFrame {
             // Check for unethical verdict and set to unethical
             if (jRadioButton2.isSelected() ) {
                 MainMenu.cases[2].verdict.setStudentVerdict("Unethical");
-                
             }
+            // Getting student reason
+            MainMenu.cases[2].verdict.setReason(jTextArea1.getText());
+            
             // Writing to the file
-            output.println(MainMenu.cases[2].verdict.getStudentVerdict());
+            output.println(MainMenu.cases[2].verdict);
             // Closing the printwriter to save to file
             output.close(); 
             // Error check
         } catch(IOException e){
             System.out.println("Error with writing answer to file");
         }
-        // Getting student reason
-        MainMenu.cases[2].verdict.setReason(jTextArea1.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed

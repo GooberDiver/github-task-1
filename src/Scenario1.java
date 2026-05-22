@@ -168,7 +168,7 @@ public class Scenario1 extends javax.swing.JFrame {
         this.setVisible(false);
         
         // Setting case title
-        MainMenu.cases[0].verdict.setCaseTitle("Privacy Protect");
+        MainMenu.cases[0].verdict.setCaseTitle("Privacy Protection");
         // Writing the verdict to file
         
         try {
@@ -184,16 +184,18 @@ public class Scenario1 extends javax.swing.JFrame {
                 MainMenu.cases[0].verdict.setStudentVerdict("Unethical");
                 
             }
+            // Getting student reason
+            MainMenu.cases[0].verdict.setReason(jTextArea2.getText());
+            
             // Writing to the file
-            output.println(MainMenu.cases[0].verdict.getStudentVerdict());
+            // .verdict is used because toString was set up to return the verdict values
+            output.println(MainMenu.cases[0].verdict);
             // Closing the printwriter to save to file
             output.close();
             // Error check
         } catch(IOException e){
             System.out.println("Error with writing answer to file");
         }
-        // Getting student reason
-        MainMenu.cases[0].verdict.setReason(jTextArea2.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed

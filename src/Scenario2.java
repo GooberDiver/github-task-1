@@ -158,7 +158,7 @@ public class Scenario2 extends javax.swing.JFrame {
         this.setVisible(false);
         
         // Setting case title
-        MainMenu.cases[1].verdict.setCaseTitle("tech company's AI serching");
+        MainMenu.cases[1].verdict.setCaseTitle("Tech company's AI searching");
         
         // Writing the verdict to file
         try {
@@ -174,16 +174,17 @@ public class Scenario2 extends javax.swing.JFrame {
                 MainMenu.cases[1].verdict.setStudentVerdict("Unethical");
                 
             }
+            // Getting student reason
+            MainMenu.cases[1].verdict.setReason(jTextArea1.getText());
+            
             // Writing to the file
-            output.println(MainMenu.cases[1].verdict.getStudentVerdict());
+            output.println(MainMenu.cases[1].verdict);
             // Closing the printwriter to save to file
             output.close(); 
             // Error check
         } catch(IOException e){
             System.out.println("Error with writing answer to file");
         }
-        // Getting student reason
-        MainMenu.cases[1].verdict.setReason(jTextArea1.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed

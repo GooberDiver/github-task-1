@@ -87,6 +87,6 @@ public class Verdict {
      * Method changes the output of program when printing out a verdict object
      */
     public String toString(){
-        return "";
+        return caseTitle + "," + studentVerdict + "," + reason;
     }
 }
