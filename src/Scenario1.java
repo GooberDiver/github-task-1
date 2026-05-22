@@ -175,9 +175,11 @@ public class Scenario1 extends javax.swing.JFrame {
             // Setting up filewriter and printwriter
             FileWriter write = new FileWriter("Verdicts.txt",false); // false is used to clear text from file
             PrintWriter output = new PrintWriter(write);
+            // Check for ethical verdict and set to ethical
             if (jRadioButton1.isSelected()) {
                 MainMenu.cases[0].verdict.setStudentVerdict("Ethical");
             }
+            // Check for unethical verdict and set to unethical
             if (jRadioButton2.isSelected() ) {
                 MainMenu.cases[0].verdict.setStudentVerdict("Unethical");
                 
@@ -185,7 +187,8 @@ public class Scenario1 extends javax.swing.JFrame {
             // Writing to the file
             output.println(MainMenu.cases[0].verdict.getStudentVerdict());
             // Closing the printwriter to save to file
-            output.close(); 
+            output.close();
+            // Error check
         } catch(IOException e){
             System.out.println("Error with writing answer to file");
         }

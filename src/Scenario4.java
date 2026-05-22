@@ -6,6 +6,9 @@
 // Importing
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -141,15 +144,37 @@ public class Scenario4 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        // Changing scenario screen
         new Scenario5().setVisible(true);
         this.setVisible(false);
-        MainMenu.cases[3].verdict.setCaseTitle("Ai read");
-        if (jRadioButton1.isSelected()) {
-            MainMenu.cases[3].verdict.setStudentVerdict("Ethical");
+        
+        // Setting case title
+        MainMenu.cases[3].verdict.setCaseTitle("forged evidence");
+        
+        // Writing the verdict to file
+        try {
+            // Setting up filewriter and printwriter
+            FileWriter write = new FileWriter("Verdicts.txt",true); //true is used in all other scenarios since there is text in the file
+            PrintWriter output = new PrintWriter(write);
+            // Check for ethical verdict and set to ethical
+            if (jRadioButton1.isSelected()) {
+                MainMenu.cases[3].verdict.setStudentVerdict("Ethical");
+            }
+            // Check for unethical verdict and set to unethical
+            if (jRadioButton2.isSelected() ) {
+                MainMenu.cases[3].verdict.setStudentVerdict("Unethical");
+                
+            }
+            // Writing to the file
+            output.println(MainMenu.cases[3].verdict.getStudentVerdict());
+            // Closing the printwriter to save to file
+            output.close(); 
+            // Error check
+        } catch(IOException e){
+            System.out.println("Error with writing answer to file");
         }
-        if (jRadioButton2.isSelected() ) {
-            MainMenu.cases[3].verdict.setStudentVerdict("Unethical");
-        }
+        // Getting student reason
         MainMenu.cases[3].verdict.setReason(jTextArea1.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 

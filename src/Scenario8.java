@@ -6,6 +6,9 @@
 // Importing
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -69,7 +72,7 @@ public class Scenario8 extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jTextPane1);
 
-        jButton1.setText("Return to main menu");
+        jButton1.setText("Go to results");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -141,22 +144,35 @@ public class Scenario8 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        // Changing jFrame
+        // Changing scenario screen
         new Result().setVisible(true);
         this.setVisible(false);
         
         // Setting case title
         MainMenu.cases[7].verdict.setCaseTitle("The missing show");
         
-        // Setting verdict
-        if (jRadioButton1.isSelected() ) {
-           MainMenu.cases[7].verdict.setStudentVerdict("Ethical");
+        // Writing the verdict to file
+        try {
+            // Setting up filewriter and printwriter
+            FileWriter write = new FileWriter("Verdicts.txt",true); //true is used in all other scenarios since there is text in the file
+            PrintWriter output = new PrintWriter(write);
+            // Check for ethical verdict and set to ethical
+            if (jRadioButton1.isSelected()) {
+                MainMenu.cases[7].verdict.setStudentVerdict("Ethical");
+            }
+            // Check for unethical verdict and set to unethical
+            if (jRadioButton2.isSelected() ) {
+                MainMenu.cases[7].verdict.setStudentVerdict("Unethical");  
+            }
+            // Writing to the file
+            output.println(MainMenu.cases[7].verdict.getStudentVerdict());
+            // Closing the printwriter to save to file
+            output.close(); 
+            // Error check
+        } catch(IOException e){
+            System.out.println("Error with writing answer to file");
         }
-        if (jRadioButton2.isSelected() ) {
-            MainMenu.cases[7].verdict.setStudentVerdict("Unethical");
-        }
-        
-        // Setting reason
+        // Getting student reason
         MainMenu.cases[7].verdict.setReason(jTextField1.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
