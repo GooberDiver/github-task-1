@@ -36,9 +36,8 @@ public class MainMenu extends javax.swing.JFrame {
             while (input.hasNextLine() ) {
                 // Splitting the file text
                 String text = input.nextLine();
-                //String [] info = text.split(",");
-                System.out.print(text);
-                /**
+                String [] info = text.split(",");
+                
                 // Check for array position when scenario is a privacy case
                 if (counter == 0 || counter == 4) {
                         // Making the case object
@@ -58,10 +57,8 @@ public class MainMenu extends javax.swing.JFrame {
                 if (counter == 3 || counter == 7) {
                         // Making the case object
                     cases[counter] = new IntellectualPropertyCase (info[0].trim(), info[1].trim(), info[2].trim() );
-                }
-                */
-                
-            counter += 1; //Increasing counter to move array position
+                }       
+                counter += 1; //Increasing counter to move array position
             }
             input.close();  //Closing scanner  
         }
@@ -69,10 +66,10 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.print("Error with reading from file");
         }
         catch (ArrayIndexOutOfBoundsException f) {
-            System.out.println("meatball");
-           
+            System.out.println("Array error");           
         }
         
+        /**
         // Premade cases
         cases[0] = new PrivacyCase ("The always-on microphone", 
                 "A smartphone company recorded household conversation even when the device " +
@@ -104,7 +101,7 @@ public class MainMenu extends javax.swing.JFrame {
         cases[7] = new IntellectualPropertyCase ("The missing show", "A streaming platform removes a show after underperforming in profits, " +
                 "users pirate the show after removal in order to watch the show.", "digital piracy");
         System.out.println(cases[7]);
-        
+        */
     }
 
     /**
@@ -159,8 +156,6 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        
         
         new Scenario1().setVisible(true);
         this.setVisible(false);
