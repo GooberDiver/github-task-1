@@ -6,6 +6,9 @@
 // Importing
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.FileWriter;
 
 /**
  *
@@ -159,15 +162,34 @@ public class Scenario1 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        // Changing scenario screen
         new Scenario2().setVisible(true);
         this.setVisible(false);
+        
+        // Setting case title
         MainMenu.cases[0].verdict.setCaseTitle("Privacy Protect");
-        if (jRadioButton1.isSelected()) {
-            MainMenu.cases[0].verdict.setStudentVerdict("Ethical");
+        // Writing the verdict to file
+        
+        try {
+            // Setting up filewriter and printwriter
+            FileWriter write = new FileWriter("Verdicts.txt",false); // false is used to clear text from file
+            PrintWriter output = new PrintWriter(write);
+            if (jRadioButton1.isSelected()) {
+                MainMenu.cases[0].verdict.setStudentVerdict("Ethical");
+            }
+            if (jRadioButton2.isSelected() ) {
+                MainMenu.cases[0].verdict.setStudentVerdict("Unethical");
+                
+            }
+            // Writing to the file
+            output.println(MainMenu.cases[0].verdict.getStudentVerdict());
+            // Closing the printwriter to save to file
+            output.close(); 
+        } catch(IOException e){
+            System.out.println("Error with writing answer to file");
         }
-        if (jRadioButton2.isSelected() ) {
-            MainMenu.cases[0].verdict.setStudentVerdict("Unethical");
-        }
+        // Getting student reason
         MainMenu.cases[0].verdict.setReason(jTextArea2.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
