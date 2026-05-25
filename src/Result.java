@@ -13,8 +13,8 @@ import java.awt.event.WindowAdapter;
  */
 public class Result extends javax.swing.JFrame {
     
-    public int ethical = 0;
-    public int unethical = 0;
+    public static int ethical = 0;
+    public static int unethical = 0;
     /**
      * Creates new form Result
      */
@@ -25,19 +25,8 @@ public class Result extends javax.swing.JFrame {
          addWindowListener(new WindowAdapter() {
             @Override
             public void windowActivated(WindowEvent e) {
-                // Check for ethical or unethical
-                for (int i = 0 ; i < MainMenu.cases.length ; i++) {
-                    if (MainMenu.cases[i].verdict.getStudentVerdict().equals("Ethical") ) { 
-                        // Increasing ethical choice amount
-                        ethical += 1;
-                    }
-                    if (MainMenu.cases[i].verdict.getStudentVerdict().equals("Unethical") ) {
-                        // Increasing unethical choice amount
-                        unethical += 1;
-                    }
-                    // Printing out the case title and category with the user's verdict
-                     System.out.println(MainMenu.cases[i]);
-                }
+                // Checking answers using method
+                ethicCheck();
                 // Showing number of times ethical was picked
                 jLabel4.setText("" + ethical);
                 // Showing number of times unethical was picked
@@ -64,7 +53,25 @@ public class Result extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    public static void ethicCheck() {
+        // Resetting values
+        ethical = 0;
+        unethical = 0;
+        // Check for ethical or unethical
+                for (int i = 0 ; i < MainMenu.cases.length ; i++) {
+                    if (MainMenu.cases[i].verdict.getStudentVerdict().equals("Ethical") ) { 
+                        // Increasing ethical choice amount
+                        ethical += 1;
+                    }
+                    if (MainMenu.cases[i].verdict.getStudentVerdict().equals("Unethical") ) {
+                        // Increasing unethical choice amount
+                        unethical += 1;
+                    }
+                    // Printing out the case title and category with the user's verdict
+                     System.out.println(MainMenu.cases[i]);
+                }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
