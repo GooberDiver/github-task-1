@@ -17,6 +17,6 @@ public class IntellectualPropertyCase extends EthicsCase{
     return ipType;
 }
     public String toString(){
-        return super.getCaseTitle();
+        return super.toString() + " | Issue type: " + ipType;
     }
 }

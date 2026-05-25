@@ -69,39 +69,6 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("Array error");           
         }
         
-        /**
-        // Premade cases
-        cases[0] = new PrivacyCase ("The always-on microphone", 
-                "A smartphone company recorded household conversation even when the device " +
-                "was not activated. Employees reviewed the recording", "audio recordings");
-                
-        cases[1] = new AlgorithmCase ("The biased hiring bot", "A tech company's AI screening " +
-                "tool ranked male applicants higher than equally qualfiied female applicants.", "gender bias");
-        
-        cases[2] = new MisinformationCase ("The deepfake politication", "A deepfake video of a candidate " +
-                "saying things they never said spread widely online during an election before being identified as fake.",
-                "deepfake video");
-        
-        cases[3] = new IntellectualPropertyCase ("AI trained on artist work", "An AI image generator was trained on millions " +
-                "of artworks scraped without permission. Artists receive no credit or payment.", "AI-generated art");
-        
-        // new cases
-        cases[4] = new PrivacyCase ("The data breech", "A company collected data on users to get feedback for their product. " +
-                "A hack found a security flaw and uncovered the data. The hacker gave suggestion on how to improve the data security.",
-                "data breech");
-        
-        cases[5] = new AlgorithmCase ("The healthcare diagonsis", "A hospital used AI to speed up their diagonsis of patients " +
-                "which let them deal with more people. Minorities were more likely to be misdiagnosed due to lack of representation in the algorithm.",
-                "Healthcase diagnosis");
-        
-        cases[6] = new MisinformationCase ("The health posts", "An influencer creates a post about a disease outbreak without research " + 
-                "and ends up posting incorrect info. Their followers trust them and repost the content leading to misinformation spreading.",
-                "social media post");
-        
-        cases[7] = new IntellectualPropertyCase ("The missing show", "A streaming platform removes a show after underperforming in profits, " +
-                "users pirate the show after removal in order to watch the show.", "digital piracy");
-        System.out.println(cases[7]);
-        */
     }
 
     /**

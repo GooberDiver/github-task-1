@@ -35,6 +35,8 @@ public class Result extends javax.swing.JFrame {
                         // Increasing unethical choice amount
                         unethical += 1;
                     }
+                    // Printing out the case title and category with the user's verdict
+                     System.out.println(MainMenu.cases[i]);
                 }
                 // Showing number of times ethical was picked
                 jLabel4.setText("" + ethical);
@@ -58,6 +60,7 @@ public class Result extends javax.swing.JFrame {
                     jTextPane1.setText("Your profile: The Ethics Watchdog" + "\n\n You believe technology is causing more " +
                             "harm than good right now. You think strong laws and ethical standards are urgently needed.");
                 }
+               
             }
         });
     }

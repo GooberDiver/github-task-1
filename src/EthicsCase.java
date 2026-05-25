@@ -37,6 +37,6 @@ public class EthicsCase {
     
     // toString for output
     public String toString() {
-        return "Case title: " + caseTitle + " | Category: " + category + "Your verdict was: " + verdict.getStudentVerdict();
+        return "Case title: " + caseTitle + " | Category: " + category + "| Your verdict was: " + verdict.getStudentVerdict();
     }
 }

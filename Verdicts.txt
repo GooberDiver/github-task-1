@@ -1,8 +1,8 @@
-Privacy Protection,Ethical,h
-Tech company's AI searching,Unethical,l
-Deepfake politcal footage,Ethical,123
-AI artwork,Ethical,g
-The data breech,Unethical,l
-The healthcare diagnosis,Ethical,g
-The health posts,Unethical,1231331313
-The missing show,Ethical,1234141
+Privacy Protection,Ethical,g
+Tech company's AI searching,Unethical,c
+Deepfake political footage,Ethical,a
+AI artwork,Ethical,d
+The data breech,Unethical,c
+The healthcare diagnosis,Unethical,b
+The health posts,Ethical,a
+The missing show,Ethical,b
