@@ -17,7 +17,9 @@ public class MainMenu extends javax.swing.JFrame {
     
     // Array creation
     static EthicsCase [] cases = new EthicsCase[8];
-        
+    
+    // Overloading constructor of verdict
+    Verdict v = new Verdict("Customizable title","No verdict given","No reason given");    
         
     /**
      * Creates new form MainMenu
