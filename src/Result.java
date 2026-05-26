@@ -13,8 +13,15 @@ import java.awt.event.WindowAdapter;
  */
 public class Result extends javax.swing.JFrame {
     
+    // Counter for user choices
     public static int ethical = 0;
     public static int unethical = 0;
+    // counter for question types
+    public static int privacyCase = 0;
+    public static int algorCase = 0;
+    public static int misinfoCase = 0;
+    public static int ipCase = 0;
+    
     /**
      * Creates new form Result
      */
@@ -27,6 +34,11 @@ public class Result extends javax.swing.JFrame {
             public void windowActivated(WindowEvent e) {
                 // Checking answers using method
                 ethicCheck();
+                // Line for formatting
+                System.out.println("");
+                // Checking how many scenarios were used with each case type
+                caseCounter();
+                
                 // Showing number of times ethical was picked
                 jLabel4.setText("" + ethical);
                 // Showing number of times unethical was picked
@@ -54,6 +66,10 @@ public class Result extends javax.swing.JFrame {
         });
     }
     
+    /**
+     * This method checks the number of times the user picked a scenario as ethical or unethical
+     * and changes the value while printing out the info for each case
+     */
     public static void ethicCheck() {
         // Resetting values
         ethical = 0;
@@ -71,6 +87,42 @@ public class Result extends javax.swing.JFrame {
                     // Printing out the case title and category with the user's verdict
                      System.out.println(MainMenu.cases[i]);
                 }
+    }
+    
+    /**
+     * This method counts how many cases of the child classes are in the array and displays the amount
+     */
+    public void caseCounter() {
+        // Resetting values
+        privacyCase = 0;
+        algorCase = 0;
+        misinfoCase = 0;
+        ipCase = 0;
+
+        // Loop to check how many questions of each type were in the array
+        for (int i = 0 ; i < MainMenu.cases.length ; i++) {
+            // Privacy cases
+            if (MainMenu.cases[i] instanceof PrivacyCase) {
+                privacyCase += 1;
+            }
+            // Algorithm cases
+            if (MainMenu.cases[i] instanceof AlgorithmCase) {
+                algorCase += 1;
+            }
+            // Misinformation cases
+            if (MainMenu.cases[i] instanceof MisinformationCase) {
+                misinfoCase += 1;
+            }
+            // Intellectual property cases
+            if (MainMenu.cases[i] instanceof IntellectualPropertyCase) {
+                ipCase += 1;
+            } 
+        }
+        // Printing out number of each case type
+        System.out.println("Number of data privacy/protection cases: " + privacyCase); // Privacy
+        System.out.println("Number of algorithm cases: " + algorCase); // Algorithm
+        System.out.println("Number of misinformation cases: " + misinfoCase); // Misinfo
+        System.out.println("Number of intellectual property cases: " + ipCase);//Intellectual property   
     }
     /**
      * This method is called from within the constructor to initialize the form.
