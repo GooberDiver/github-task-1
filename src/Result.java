@@ -21,6 +21,8 @@ public class Result extends javax.swing.JFrame {
     public static int algorCase = 0;
     public static int misinfoCase = 0;
     public static int ipCase = 0;
+    // constant
+    public static final String EMPTY_VERDICT_INDICATOR = "(no verdict chosen)";
     
     /**
      * Creates new form Result
@@ -32,6 +34,14 @@ public class Result extends javax.swing.JFrame {
          addWindowListener(new WindowAdapter() {
             @Override
             public void windowActivated(WindowEvent e) {
+                // Checking if user verdict is empty and changing to indicator string if empty
+                for (int i = 0 ; i < MainMenu.cases.length ; i++) {
+                    if (MainMenu.cases[i].verdict.getStudentVerdict().equals("") ) { 
+                        // Changing verdict to the indicator string
+                        MainMenu.cases[i].verdict.setStudentVerdict(EMPTY_VERDICT_INDICATOR);
+                    }
+                }
+                
                 // Checking answers using method
                 ethicCheck();
                 // Line for formatting

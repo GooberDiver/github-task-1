@@ -14,28 +14,48 @@ public class EthicsCase {
     private String category;
     public Verdict verdict;
     
-    // Constructor
+    /**
+     * Constructor for ethics cases
+     * @param caseTitle title of case
+     * @param description description of case
+     * @param category category of case
+     */
     public EthicsCase(String caseTitle, String description, String category) {
         this.caseTitle = caseTitle;
         this.description = description;
         this.category = category;
-        this.verdict = new Verdict();
+        this.verdict = new Verdict(); // Empty verdict created
     }
     
-    //Getters
+    /**
+     * Getter for case title
+     * @return the case title is returned
+     */
     public String getCaseTitle() {
         return caseTitle;
     }
     
+    /**
+     * Getter for description
+     * @return the case description is returned
+     */
     public String getCaseDescription() {
         return description;
     }
     
+    /**
+     * Getter for category
+     * @return the case category is returned
+     */
     public String getCategory() {
         return category;
     }
     
-    // toString for output
+    @Override
+    /**
+     * toString method to print out the values set in the case
+     * @return The case's title, category, and verdict and printed out in a formatted sentence
+     */
     public String toString() {
         return "Case title: " + caseTitle + " | Category: " + category + "| Your verdict was: " + verdict.getStudentVerdict();
     }

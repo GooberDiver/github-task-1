@@ -26,6 +26,7 @@ public class Scenario3 extends javax.swing.JFrame {
          addWindowListener(new WindowAdapter() {
             @Override
             public void windowActivated(WindowEvent e) {
+                // Displaying case info
                 jLabel2.setText(MainMenu.cases[2].getCaseTitle());
                 
                 jLabel4.setText(MainMenu.cases[2].getCategory());
